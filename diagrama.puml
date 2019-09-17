@@ -1,0 +1,73 @@
+@startuml
+
+title Autopartes ABC
+
+
+class Empresa {
+incorporarAutoparte:cantidad:()
+agregarAutoparte:()
+aplicarImpuesto:a:()
+consultarStock:()
+inicializar:()
+}
+
+class Autoparte {
+nroPieza
+stock 
+descripcion
+costo
+consultarNroPieza()
+agregarImpuesto:()
+agregarStock:()
+consultarNroPieza:()
+inicializar:descripcion:costo:()
+}
+
+class Cliente {
+inicializar:()
+}
+
+class ItemVenta {
+cantidad
+precioVigente
+precioConImpuestos
+inicializar:cant:()
+precioConImpuestos()
+}
+
+class Venta {
+mesesGarantia
+porcentajeDescuento
+precioConImpuestos
+inicializar:listaitems:fecha:desc:()
+}
+
+class Fecha {
+dia
+mes
+anio
+}
+
+class Impuesto{
+
+}
+
+class ImpuestoFijo
+class ImpuestoVariable
+class ImpuestoEscalonado
+
+
+
+Empresa -- Autoparte
+Empresa -- Cliente
+Empresa -- ItemVenta
+Empresa -- Venta
+ItemVenta -- Venta
+Fecha -- Venta
+Impuesto  <|-- ImpuestoFijo
+Impuesto  <|-- ImpuestoVariable
+Impuesto  <|-- ImpuestoEscalonado
+Impuesto  -- Autoparte
+
+
+@enduml
