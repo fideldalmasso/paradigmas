@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "TP1",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"inicio",
+		"fin",
+		"porcentaje"
+	],
+	"name" : "RangoConImpuesto",
+	"type" : "normal"
+}
