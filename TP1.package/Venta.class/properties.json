@@ -9,8 +9,8 @@
 		"cliente",
 		"listaItems",
 		"total",
-		"garantiaEnMeses",
-		"descuentoPorcentaje",
+		"mesesGarantia",
+		"porcentajeDescuento",
 		"fecha"
 	],
 	"name" : "Venta",
