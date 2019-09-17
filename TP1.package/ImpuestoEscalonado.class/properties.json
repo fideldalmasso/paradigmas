@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "Impuesto",
+	"category" : "TP1",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "ImpuestoEscalonado",
+	"type" : "normal"
+}

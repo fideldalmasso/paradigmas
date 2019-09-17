@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "TP1",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"autoparte",
+		"cantidad",
+		"precio"
+	],
+	"name" : "ItemVenta",
+	"type" : "normal"
+}

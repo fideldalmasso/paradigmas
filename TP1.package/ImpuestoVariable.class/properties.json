@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "Impuesto",
+	"category" : "TP1",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"porcentaje"
+	],
+	"name" : "ImpuestoVariable",
+	"type" : "normal"
+}
