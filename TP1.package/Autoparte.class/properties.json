@@ -6,10 +6,12 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"listaVentas",
-		"listaClientes",
-		"listaAutopartes"
+		"nroPieza",
+		"stock",
+		"descripcion",
+		"costo",
+		"listaImpuestos"
 	],
-	"name" : "Empresa",
+	"name" : "Autoparte",
 	"type" : "normal"
 }

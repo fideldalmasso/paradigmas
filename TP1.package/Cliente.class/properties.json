@@ -6,10 +6,9 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"listaVentas",
-		"listaClientes",
-		"listaAutopartes"
+		"dni",
+		"listaVentas"
 	],
-	"name" : "Empresa",
+	"name" : "Cliente",
 	"type" : "normal"
 }

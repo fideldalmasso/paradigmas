@@ -6,10 +6,10 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"listaVentas",
-		"listaClientes",
-		"listaAutopartes"
+		"dia",
+		"mes",
+		"anio"
 	],
-	"name" : "Empresa",
+	"name" : "Fecha",
 	"type" : "normal"
 }
