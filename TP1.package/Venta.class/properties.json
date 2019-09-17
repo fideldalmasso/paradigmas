@@ -5,7 +5,14 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
+	"instvars" : [
+		"cliente",
+		"listaItems",
+		"total",
+		"garantiaEnMeses",
+		"descuentoPorcentaje",
+		"fecha"
+	],
 	"name" : "Venta",
 	"type" : "normal"
 }
