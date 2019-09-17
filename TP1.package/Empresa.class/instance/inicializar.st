@@ -4,3 +4,4 @@ inicializar
 	listaVentas := OrderedCollection new.
 	listaClientes := OrderedCollection new.
 	listaAutopartes := OrderedCollection new.
+	^self.
