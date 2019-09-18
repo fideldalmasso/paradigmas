@@ -1,11 +1,13 @@
 {
-	"commentStamp" : "",
+	"commentStamp" : "FidelDalmasso 9/17/2019 22:25",
 	"super" : "Impuesto",
 	"category" : "TP1",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
+	"instvars" : [
+		"listaRangos"
+	],
 	"name" : "ImpuestoEscalonado",
 	"type" : "normal"
 }
