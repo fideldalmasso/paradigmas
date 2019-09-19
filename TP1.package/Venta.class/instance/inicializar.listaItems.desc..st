@@ -7,6 +7,7 @@ inicializar: unCliente listaItems: unaListaItems desc: unDescuento
 	listaItems := unaListaItems.
 	fecha := Fecha new:fechaHoy dayOfMonth mes:fechaHoy monthIndex anio:fechaHoy year .
 	porcentajeDescuento := unDescuento.
+	mesesGarantia := (Empresa mesesGarantia) shallowCopy.
 	totalNeto:=0.
 	1 to: (listaItems size) do:
 	[ :i | totalNeto:= totalNeto + ((listaItems at: i) precioConImpuestos * (listaItems at: i) cantidad)  ].
