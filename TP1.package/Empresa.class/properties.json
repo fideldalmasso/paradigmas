@@ -5,7 +5,8 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [
-		"margenComercial"
+		"margenComercial",
+		"mesesGarantia"
 	],
 	"instvars" : [
 		"listaVentas",
