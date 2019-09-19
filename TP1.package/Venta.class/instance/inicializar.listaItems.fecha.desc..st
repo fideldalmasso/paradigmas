@@ -5,7 +5,9 @@ inicializar: unCliente listaItems: unaListaItems fecha: unaFecha desc: unDescuen
 	listaItems := unaListaItems.
 	fecha := unaFecha.
 	porcentajeDescuento := unDescuento.
-	total:=0.
+	totalNeto:=0.
 	1 to: (listaItems size) do:
-	[ :i | total:= total + ((listaItems at: i) precioConImpuestos * (listaItems at: i) cantidad)  ].
+	[ :i | totalNeto:= totalNeto + ((listaItems at: i) precioConImpuestos * (listaItems at: i) cantidad)  ].
+	importeDescontado:= totalNeto*0.01*porcentajeDescuento.
+	totalAbonado := totalNeto - importeDescontado.
 	^self.

@@ -10,7 +10,8 @@
 		"stock",
 		"descripcion",
 		"costo",
-		"listaImpuestos"
+		"listaImpuestos",
+		"vendidos"
 	],
 	"name" : "Autoparte",
 	"type" : "normal"

@@ -8,10 +8,12 @@
 	"instvars" : [
 		"cliente",
 		"listaItems",
-		"total",
+		"totalNeto",
 		"mesesGarantia",
 		"porcentajeDescuento",
-		"fecha"
+		"importeDescontado",
+		"fecha",
+		"totalAbonado"
 	],
 	"name" : "Venta",
 	"type" : "normal"
