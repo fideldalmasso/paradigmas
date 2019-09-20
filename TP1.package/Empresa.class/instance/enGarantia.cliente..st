@@ -11,5 +11,5 @@ enGarantia: nroPieza cliente: dni
 	ventaMasReciente := (ventasDePieza at:1).
 	2 to: (ventasDePieza size) do:[ :i | 
 		(((ventasDePieza at:i) fecha) masRecienteQue: (ventaMasReciente fecha)) ifTrue:[ventaMasReciente:=(ventasDePieza at:i)]].
-
+	
 	
