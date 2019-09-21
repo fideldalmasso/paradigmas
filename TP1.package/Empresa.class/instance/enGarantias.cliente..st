@@ -1,4 +1,4 @@
-as yet unclassified
+operaciones con ventas
 enGarantias: nroPieza cliente: dni
 	|cliente ventasDePieza|
 	 cliente:= self obtenerCliente: dni.

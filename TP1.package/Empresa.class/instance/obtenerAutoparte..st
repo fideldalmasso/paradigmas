@@ -1,5 +1,5 @@
-as yet unclassified
+operaciones con autopartes
 obtenerAutoparte: nroPieza
-|autoparte|
-autoparte:= listaAutopartes detect: [:i| i consultarNroPieza  = nroPieza] ifNone: [ Object error:'No existe la autoparte'].
-^(autoparte)  
+
+^ listaAutopartes at: nroPieza ifAbsent: [ Object error:'No existe la autoparte'].
+

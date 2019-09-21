@@ -1,4 +1,4 @@
-as yet unclassified
+operaciones con ventas
 generarVenta: listaItems a: unCliente descuento: desc
 |venta|
 

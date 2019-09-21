@@ -1,4 +1,6 @@
-as yet unclassified
+operaciones con autopartes
 incorporarAutoparte: unaAutoparte cantidad: cant
 
-listaAutopartes do: [:i|(unaAutoparte == listaAutopartes at:i	) ifTrue: [ (listaAutopartes at:i) agregarStock: cant ] ifFalse: [^'No existe la autoparte']].
+(listaAutopartes includes: unaAutoparte) 
+ifTrue: [unaAutoparte agregarStock: cant.]
+ifFalse: [Object error: 'ERROR: no existe la autoparte'].

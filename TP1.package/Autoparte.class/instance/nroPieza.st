@@ -1,5 +1,5 @@
 as yet unclassified
-consultarNroPieza
+nroPieza
 	"Devuelve el numero de pieza de la autoparte."
 
 	^nroPieza.

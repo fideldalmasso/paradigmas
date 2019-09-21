@@ -1,0 +1,4 @@
+accessing
+stock
+
+^ stock.

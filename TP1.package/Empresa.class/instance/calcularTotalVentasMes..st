@@ -1,4 +1,4 @@
-as yet unclassified
+operaciones con ventas
 calcularTotalVentasMes: mes
 	"Devuelve el monto total de las ventas del mes"
 	| montoTotal |

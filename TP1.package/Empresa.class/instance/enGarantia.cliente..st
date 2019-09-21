@@ -1,4 +1,4 @@
-as yet unclassified
+operaciones con ventas
 enGarantia: nroPieza cliente: dni
 	| ventasDePieza cliente comprasDelCliente ventaMasReciente fechaGarantia fechaHoy|
 	fechaHoy := Fecha newFechaHoy.
@@ -6,7 +6,7 @@ enGarantia: nroPieza cliente: dni
 	comprasDelCliente := cliente compras.
 	ventasDePieza := OrderedCollection new.
 	1 to: (comprasDelCliente size) do: [ :i | 1 to:(((comprasDelCliente at:i) obtenerPiezas) size) 
-		do:[ :j | (((comprasDelCliente at:i) obtenerPiezas at:j) consultarNroPieza = nroPieza)
+		do:[ :j | (((comprasDelCliente at:i) obtenerPiezas at:j) nroPieza = nroPieza)
 			ifTrue:[ventasDePieza add: (comprasDelCliente at:i)] ]].
 	ventaMasReciente := (ventasDePieza at:1).
 	2 to: (ventasDePieza size) do:[ :i | 

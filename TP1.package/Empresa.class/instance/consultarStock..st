@@ -1,6 +1,5 @@
-as yet unclassified
+operaciones con autopartes
 consultarStock: nroPieza
-	"Devuelve el stock de una autoparte determinada"
-	1 to: (listaAutopartes size) do:
-		[ :i | ((listaAutopartes at: i) consultarNroPieza = nroPieza) 
-						ifTrue:[^((listaAutopartes at:i ) stockPieza)]].
+"Devuelve el stock de una autoparte determinada"
+			
+^(listaAutopartes at: nroPieza) stock.

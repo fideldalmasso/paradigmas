@@ -1,5 +1,5 @@
-as yet unclassified
+operaciones con autopartes
 calcularUnidadesVendidasProducto: nroPieza
-	"Retorna la cantidad de vendidos de una autoparte"
+	"Retorna la cantidad de ventas de una autoparte"
 	^((self obtenerAutoparte: nroPieza) vendidos).
 	

@@ -1,4 +1,4 @@
 as yet unclassified
-consultarDni
+dni
 	"Retorna el dni del cliente"
 	^dni.

@@ -1,3 +1,4 @@
-as yet unclassified
+operaciones con autopartes
 consultarPrecioDeVenta: nroPieza
-	^((self obtenerAutoparte: nroPieza) calcularPrecioDeVenta).
+
+	^(listaAutopartes at: nroPieza) calcularPrecioDeVenta.

@@ -1,5 +1,5 @@
-as yet unclassified
+operaciones con autopartes
 aplicarImpuesto: unImpuesto a: nroPieza
 
-(self obtenerAutoparte: nroPieza) agregarImpuesto: unImpuesto.
+(listaAutopartes at: nroPieza) agregarImpuesto: unImpuesto.
 								
