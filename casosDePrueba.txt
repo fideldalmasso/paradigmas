@@ -1,0 +1,37 @@
+|empresaABC jose maria autoparte1 autoparte2 impuesto1 impuesto2 impuesto3 listaitems1|
+
+Empresa margenComercial: 5; mesesGarantia: 6.
+
+"------------- Creación de variables iniciales -------------"
+empresaABC:= Empresa new.
+
+autoparte1:= Autoparte new: 25407 descripcion: 'Puerta delantera izquierda Ford Ka' costo: 10000.
+autoparte2:= Autoparte new: 25408 descripcion: 'Cubierta volkswagen gol' costo: 5500.
+ 
+jose:= Cliente new: 41976708.
+maria:= Cliente new: 41656940.
+
+impuesto1:= ImpuestoFijo new: 200.
+impuesto2:= ImpuestoVariable new: 13.
+impuesto3:= ImpuestoEscalonado new: 8000 tope2: 30000 pcentaje1: 5  pcentaje2: 8 pcentaje3: 10.
+
+"------------- Manejo de clientes -------------"
+empresaABC agregarCliente: jose.
+empresaABC agregarCliente: maria.
+
+"------------- Manejo de autopartes -------------"
+empresaABC agregarAutoparte: autoparte1.
+empresaABC incorporarAutoparte: autoparte1 cantidad: 10. 
+empresaABC aplicarImpuesto: impuesto1 a: (autoparte1 nroPieza).
+empresaABC aplicarImpuesto: impuesto3 a: (autoparte1 nroPieza).
+
+empresaABC agregarAutoparte: autoparte2.
+empresaABC incorporarAutoparte: autoparte2 cantidad: 16. 
+
+empresaABC aplicarImpuesto: impuesto2 a: (autoparte2 nroPieza).
+empresaABC aplicarImpuesto: impuesto3 a: (autoparte2 nroPieza).
+
+"------------- Manejo de ventas -------------"
+empresaABC agregarAlCarro: autoparte1  de: jose  cant: 2.
+empresaABC agregarAlCarro: autoparte2  de: maria  cant: 3.
+empresaABC generarVenta: (jose carrito) a: jose  descuento: 5.
