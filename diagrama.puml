@@ -62,6 +62,7 @@ class ItemVenta {
 -cantidad
 -precioVigente
 -precioConImpuestos
+calcularPrecios()
 autoparte()
 cantidad()
 inicializar:cant:()

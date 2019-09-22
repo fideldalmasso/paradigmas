@@ -1,4 +1,4 @@
 as yet unclassified
-monto
+totalAbonado
 	"Retorna el total abonado de la venta"
 	^totalAbonado.
