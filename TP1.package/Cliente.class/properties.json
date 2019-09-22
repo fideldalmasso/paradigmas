@@ -7,7 +7,7 @@
 	"classvars" : [ ],
 	"instvars" : [
 		"dni",
-		"listaVentas"
+		"listaCompras"
 	],
 	"name" : "Cliente",
 	"type" : "normal"

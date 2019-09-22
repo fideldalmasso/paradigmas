@@ -1,0 +1,4 @@
+accessing
+listaVentas
+
+^listaVentas.

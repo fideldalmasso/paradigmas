@@ -1,5 +1,5 @@
 as yet unclassified
-inicializar: unCliente listaItems: unCarrito fecha: unaFecha desc: unDescuento
+inicializar: unCliente listaItems: unCarrito desc: unDescuento fecha: unaFecha
 	"Inicializa la instancia de venta"
 	cliente:= unCliente.
 	

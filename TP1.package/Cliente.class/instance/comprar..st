@@ -1,5 +1,6 @@
 as yet unclassified
-comprar: unaVenta
-	"Agrega la venta a la lista de ventas realizadas a este cliente, o
-	en otras palabras agrega la compra al cliente"
-	listaVentas := unaVenta.
+comprar: unaCompra
+	"Agrega una compra al principio de alistaCompras"
+	listaCompras addFirst: unaCompra.
+	
+
