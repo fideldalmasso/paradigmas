@@ -3,6 +3,6 @@ inicializar: unaAutoparte cant: n
 	"Inicializa la instancia del item de venta"
 	autoparte:= unaAutoparte.
 	cantidad := n.
-	precioVigente := (unaAutoparte precio) shallowCopy.
+	precioVigente := (unaAutoparte costo) shallowCopy.
 	precioConImpuestos := (unaAutoparte calcularPrecioDeVenta) shallowCopy.
 	^self.

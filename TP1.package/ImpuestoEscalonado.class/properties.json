@@ -6,11 +6,11 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"tope1",
-		"tope2",
+		"tope1Inclusivo",
 		"pcentaje1",
 		"pcentaje2",
-		"pcentaje3"
+		"pcentaje3",
+		"tope2Inclusivo"
 	],
 	"name" : "ImpuestoEscalonado",
 	"type" : "normal"

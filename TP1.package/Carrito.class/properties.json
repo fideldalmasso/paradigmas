@@ -1,14 +1,13 @@
 {
-	"commentStamp" : "FidelDalmasso 9/17/2019 22:26",
+	"commentStamp" : "FidelDalmasso 9/21/2019 19:47",
 	"super" : "Object",
 	"category" : "TP1",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"dni",
-		"listaVentas"
+		"items"
 	],
-	"name" : "Cliente",
+	"name" : "Carrito",
 	"type" : "normal"
 }

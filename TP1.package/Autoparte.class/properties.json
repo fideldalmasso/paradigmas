@@ -11,7 +11,7 @@
 		"descripcion",
 		"costo",
 		"listaImpuestos",
-		"vendidos"
+		"cantVendidos"
 	],
 	"name" : "Autoparte",
 	"type" : "normal"
