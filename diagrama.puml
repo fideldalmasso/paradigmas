@@ -4,9 +4,6 @@ title Autopartes ABC
 ' skinparam linetype ortho
 
 class Empresa {
--listaVentas
--listaClientes
--listaAutopartes
 -{static}margenComercial
 -{static}mesesGarantia
 incorporarAutoparte:cantidad:()
@@ -15,10 +12,6 @@ aplicarImpuesto:a:()
 consultarStock:()
 inicializar:()
 {static}new:descripcion:costo:()
-{static}margenComercial()
-{static}margenComercial:()
-{static}mesesGarantia()
-{static}mesesGarantia:()
 {static}new()
 
 }
@@ -29,15 +22,12 @@ class Autoparte {
 -cantVendidos 
 -descripcion
 -costo
--listaImpuestos
 
 consultarNroPieza()
 agregarImpuesto:()
 agregarStock:()
 reducirStock:()
 calcularPrecioDeVenta()
-nroPieza()
-vendidos()
 inicializar:descripcion:costo:()
 {static}new:descripcion:costo:()
 
@@ -45,13 +35,11 @@ inicializar:descripcion:costo:()
 
 class Cliente {
 -dni
--listaVentas
 inicializar:()
 {static}new:()
 }
 
 class Carrito {
--items
 agregar:cant:()
 {static}new()
 }
@@ -63,28 +51,21 @@ class ItemVenta {
 -precioVigente
 -precioConImpuestos
 calcularPrecios()
-autoparte()
-cantidad()
 inicializar:cant:()
 precioConImpuestos()
 {static}new:cant:()
 }
 
 class Venta {
--cliente
--listaItems
 -totalNeto
 -mesesGarantia
 -porcentajeDescuento
 -precioConImpuestos
 -importeDescontado
--fecha
 -totalAbonado
+obtenerPiezas()
 inicializar:listaitems:desc:()
 inicializar:listaitems:fecha:desc:()
-monto()
-fecha()
-obtenerPiezas()
 {static}new:listaItems:desc:()
 {static}new:listaItems:fecha:desc:()
 
@@ -98,10 +79,6 @@ diferenciaEnMeses():
 inicializar:mes:anio:()
 inicializarFechaHoy()
 masRecienteQue:()
-queAnio()
-queDia()
-queFecha()
-queMes()
 {static}new:mes:anio:()
 {static}newFechaHoy()
 }
@@ -138,6 +115,7 @@ Empresa "1" o-- "0..*" Autoparte
 Empresa "1" o-- "0..*" Cliente
 Empresa "1" o-- "0..*" Venta
 Venta "1" -- "1" Carrito
+Venta "1" -- "1" Cliente
 Carrito "1" o-- "0..*" ItemVenta
 ItemVenta "0..*" -- "1" Autoparte
 Venta "0..*" -- "1"  Fecha
