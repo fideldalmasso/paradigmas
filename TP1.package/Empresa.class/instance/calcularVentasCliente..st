@@ -7,7 +7,7 @@ calcularVentasCliente: dni
 aux:= (listaClientes at:dni) compras.
 montoTotal:= 0.
 
-aux do: [ :i | montoTotal:= montoTotal + (i monto)].
+aux do: [ :i | montoTotal:= montoTotal + (i totalAbonado)].
 
 ^montoTotal.
 

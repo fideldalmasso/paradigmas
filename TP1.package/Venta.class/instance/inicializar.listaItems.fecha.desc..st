@@ -1,13 +1,24 @@
 as yet unclassified
-inicializar: unCliente listaItems: unaListaItems fecha: unaFecha desc: unDescuento
+inicializar: unCliente listaItems: unCarrito fecha: unaFecha desc: unDescuento
 	"Inicializa la instancia de venta"
 	cliente:= unCliente.
-	listaItems := unaListaItems.
+	
 	fecha := unaFecha.
+	
 	porcentajeDescuento := unDescuento.
+	
+	mesesGarantia := (Empresa mesesGarantia) shallowCopy.
+	
 	totalNeto:=0.
-	1 to: (listaItems size) do:
-	[ :i | totalNeto:= totalNeto + ((listaItems at: i) precioConImpuestos * (listaItems at: i) cantidad)  ].
-	importeDescontado:= totalNeto*0.01*porcentajeDescuento.
+	listaItems := unCarrito.
+	
+	(unCarrito items) do:
+	[ :i | 
+	i calcularPrecios. 
+	totalNeto:= totalNeto + (i precioConImpuestos * i cantidad).
+	i autoparte reducirStock: i cantidad.
+	].
+
+	importeDescontado:= totalNeto*(porcentajeDescuento/100).
 	totalAbonado := totalNeto - importeDescontado.
 	^self.
