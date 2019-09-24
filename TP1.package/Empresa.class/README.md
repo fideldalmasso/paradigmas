@@ -1,4 +1,4 @@
-|empresaABC cliente1 cliente2 cliente3 autoparte1 autoparte2 autoparte3 impuesto1 impuesto2 impuesto3 listaitems1 carrito1 carrito2 carrito3 bool ultimaCompra|
+|empresaABC cliente1 cliente2 cliente3 autoparte1 autoparte2 autoparte3 impuesto1 impuesto2 impuesto3 carrito1 carrito2 carrito3 bool ultimaCompra|
 
 Empresa margenComercial: 5; mesesGarantia: 6.
 
@@ -66,4 +66,5 @@ empresaABC enGarantia: 25407 cliente: 41976708.
 empresaABC generarVenta: carrito3  a: cliente3  descuento: 5 fecha: ((Date today)addMonths: -7).
 empresaABC enGarantia: 25407 cliente: 41976708.
 
+empresaABC imprimir.
 ^empresaABC.
