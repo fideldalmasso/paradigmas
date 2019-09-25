@@ -5,8 +5,6 @@ inicializar: unCliente listaItems: unCarrito desc: unDescuento
 	fecha:= Date today.
 	
 	cliente:= unCliente.
-
-	porcentajeDescuento := unDescuento.
 	
 	mesesGarantia := (Empresa mesesGarantia) shallowCopy.
 	
@@ -20,6 +18,7 @@ inicializar: unCliente listaItems: unCarrito desc: unDescuento
 	i autoparte reducirStock: i cantidad.
 	].
 
-	importeDescontado:= totalNeto*(porcentajeDescuento/100).
+	porcentajeDescuento:= unDescuento.
+	importeDescontado:= totalNeto*(porcentajeDescuento /100).
 	totalAbonado := totalNeto - importeDescontado.
 	^self.

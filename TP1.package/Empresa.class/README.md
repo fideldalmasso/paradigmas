@@ -33,17 +33,19 @@ empresaABC aplicarImpuesto: impuesto1 a: (autoparte3 nroPieza).
 empresaABC aplicarImpuesto: impuesto2 a: (autoparte3 nroPieza).
 empresaABC aplicarImpuesto: impuesto3 a: (autoparte3 nroPieza).
  
-"------------- Ejemplo de venta satisfactoria -------------"
+"------------- Ejemplos de ventas -------------"
 
+"Ejemplo de venta satisfactoria"
+"El totalAbonado de esta venta debería ser: 19260 = 2*(10000+500+200-1070)"
 cliente1:= Cliente new: 41976708.
 empresaABC agregarCliente: cliente1.
 carrito1:= Carrito new.
 carrito1 agregar: autoparte1 cant: 2.
-empresaABC generarVenta: carrito1 a: cliente1 descuento: 1.
+empresaABC generarVenta: carrito1 a: cliente1 descuento: 10.
 empresaABC enGarantia: 25407 cliente: 41976708.
 
-
-"------------- Ejemplo de venta de múltiples autopartes  -------------"
+"Ejemplo de venta de múltiples autopartes"
+"El totalAbonado de esta venta debería ser: "
 cliente2:= Cliente new: 41656940.
 empresaABC agregarCliente: cliente2.
 carrito2:= Carrito new.
@@ -58,7 +60,7 @@ cliente3:= Cliente new: 41656939.
 empresaABC agregarCliente: cliente3.
 carrito3:= Carrito new.
 carrito3 agregar: autoparte3 cant: 10.
-empresaABC generarVenta: carrito3  a: cliente3  descuento: 5 fecha: ((Date today)addMonths: -7).
+empresaABC generarVenta: carrito3  a: cliente3  descuento: 6 fecha: ((Date today)addMonths: -7).
 empresaABC enGarantia: 25409 cliente: 41656939.
 
 "Ejemplo de cliente sin compras"
@@ -84,4 +86,5 @@ empresaABC calcularVentasCliente: 41976708.
 "--------- Ejemplo de calcularUnidadesVenidasProducto --------"
 empresaABC calcularUnidadesVendidasProducto: 25407.
 
+"La siguiente línea imprime un reporte general de las ventas, clientes y autopartes"
 empresaABC imprimir.
