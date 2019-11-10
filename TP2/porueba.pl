@@ -1,21 +1,31 @@
+fake_nombre(X):-N1 is random(3)+1, N2 is random(2)+1, fake_nombrePila(N1, Y1), fake_apellido(N2, Y2), append(Y1, Y2, Y3), concatenarListaStrings(Y3, X).
 
 fake_nombrePila(0, []).
-fake_nombrePila(N, [P|X]):-  repeat,A is N-1, nombre(P), fake_nombrePila(A, X), not(memberchk(P,X)).
+fake_nombrePila(N, [P|X]):-  A is N-1, repeat, nombre(P), fake_nombrePila(A, X), is_set([P|X]),!.
+
 fake_apellido(0, []).
-fake_apellido(N, [P|X]):-  A is N-1, apellido(P), fake_apellido(A, X), not(memberchk(P,X)).
+fake_apellido(N, [P|X]):-  A is N-1, repeat, apellido(P), fake_apellido(A, X), is_set([P|X]), !.
 
+concatenarListaStrings([Y],Y):-!.
+concatenarListaStrings([Y1|Ys], S):- concatenarListaStrings(Ys, P), string_concat(" ", P, Aux), string_concat(Y1, Aux, S).
 
+%CUANDO TOCA "PB" EL PROGRAMA TIRA UNA EXCEPCION
+fake_direccion(X):- fake_piso(S3), S3=\=41, !, number_string(S3, P0), fake_calle(S1), fake_numero_casa(S2), number_string(S2, P1),
+					fake_numero_departamento(S4), number_string(S4, P2), string_concat(S1, " ", Aux), string_concat(Aux, P1 , Aux1),
+					string_concat(Aux1, " Piso:", Aux2), string_concat(Aux2, P0, Aux3), string_concat(Aux3, " Dpto:", Aux4), string_concat(Aux4, P2, X).
+					
+fake_direccion(X):- fake_calle(S1), fake_numero_casa(S2), number_string(S2, P1),
+					fake_numero_departamento(S4), number_string(S4, P2), string_concat(S1, " ", Aux), string_concat(Aux, P1 , Aux1),
+					string_concat(Aux1, " Piso:", Aux2), string_concat(Aux2, "pb", Aux3), string_concat(Aux3, " Dpto:", Aux4), string_concat(Aux4, P2, X).
+
+fake_calle(X):- calles(P), random_member(X, P).
 fake_numero_casa(X):- random(1000,15001,X).
-fake_piso(X):- X is random(40)+1.
+fake_piso(X):- X is random(41)+1.
+
 fake_numero_departamento(X):- X is random(20)+1.
 
 
-calle("San Martin").
-calle("3 de Febrero").
-calle("Obispo Gelabert").
-calle("Av. Freyre").
-calle("Bv. Pellegrini").
-
+calles(["San Martin", "3 de Febrero", "Obispo Gelabert", "Av. Freyre", "Bv. Pellegrini"]).
 
 nombres(["Juan","Maria","Pedro","Jesus","Eric","Belen","Tamara"]).
 nombre(X):- nombres(P), random_member(X,P).
