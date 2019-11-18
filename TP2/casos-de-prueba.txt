@@ -1,0 +1,64 @@
+% Author: Dalmasso, Hillar, Wiggenhauser
+% Date: 11/18/2019
+
+%% Nota: para mostrar la salida en forma completa
+%% (en vez de mostrar [...|...]), escribir una
+%% consulta agregando "; true." al final, y luego
+%% presionar la tecla w.
+%% Con hacerlo una vez, el resto de las veces se 
+%% muestra correctamente.
+
+
+%% Parte 1
+
+fake_nombre(Nombre).
+fake_direccion(Direccion).
+fake_calle(Calle).
+fake_numero_casa(Numero).
+fake_piso(Piso).
+fake_numero_departamento(Dpto).
+fake_ciudad(Ciudad).
+fake_pais(Pais).
+fake_provincia(Provincia).
+fake_nombre_color(NombreColor).
+fake_nombre_empresa(NombreEmpresa).
+fake_moneda(Sigla,Nombre).
+fake_fecha(Fecha,[2019,01,01],[2019,12,31]).
+fake_dia_de_semana(DiaDeSemana).
+
+%% -----------------------------------------------------
+%% Parte 2
+%% 1.Caso de prueba presente en la consigna
+
+genera_tabla_datos(
+especificacion_tabla(10,
+[
+col(id,autoincremento(100)),
+col(nombre,nombre),
+col(fec_nac,fecha([1920,1,1],[2001,12,31]))
+]),
+Tabla).
+
+%% 	2.Caso de prueba con todos los tipos
+
+genera_tabla_datos(
+especificacion_tabla(3,
+[
+col(id,autoincremento(5000)),
+col(nombre,nombre),
+col(direc,direccion),
+col(calle,calle),
+col(nroCasa,numero_casa),
+col(piso,piso),
+col(nroDepto,numero_departamento),
+col(ciudad,ciudad),
+col(pais,pais),
+col(provincia,provincia),
+col(color,nombre_color),
+col(empresa,nombre_empresa),
+col(monedaSigla,moneda_sigla),
+col(monedaNombre,moneda_nombre),
+col(diaSemana,dia_de_semana),
+col(fec_nac,fecha([2009,2,10],[2020,9,21]))
+]),
+Tabla).
