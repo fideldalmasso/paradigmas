@@ -202,19 +202,35 @@ fake_fecha([Anio,Mes,Dia],[A1,B1,C1],[A2,B2,C2]):-
 
 
 generar_tabla_datos(especificacion_tabla(CantReng, ColList), tabla(Nombres,Renglones)):- armarCabecera(ColList, Nombres), 
-	armarListaTipos(ColList, ListaTipos), armarTabla(CantReng, ListaTipos, Renglones),!.
+	armarListaTipos(ColList, ListaTipos), armarTabla(CantReng, ListaTipos, Renglones, -1),!.
 
-armarTabla(0, ListaTipos, []):-!.
-armarTabla(CantReng, ListaTipos, [Renglon|Renglones]):-armarRenglon(ListaTipos, Renglon), N is CantReng-1,
-		armarTabla(N, ListaTipos, Renglones).
+armarTabla(0, ListaTipos, [], H):-!.
+armarTabla(CantReng, ListaTipos, [Renglon|Renglones], C):- N is CantReng-1, H is C+1,armarRenglon(ListaTipos, Renglon, H),
+		armarTabla(N, ListaTipos, Renglones, H).
 
 armarCabecera([col(Nombre,Tipo)], [Nombre]):-!.
 armarCabecera([col(Nombre,Tipo) | Cols], [Nombre|Nombres]):-armarCabecera(Cols,Nombres).
 
-tipo(nombre, Retorno):- fake_nombre(Retorno). 
+tipo(nombre, Retorno):- fake_nombre(Retorno).
+tipo(direccion, Retorno):- fake_direccion(Retorno).
+tipo(calle, Retorno):- fake_calle(Retorno).
+tipo(numero_casa, Retorno):- fake_numero_casa(Retorno).
+tipo(piso, Retorno):- fake_piso(Retorno).
+tipo(numero_departamento, Retorno):- fake_numero_departamento(Retorno).
+tipo(ciudad, Retorno):- fake_ciudad(Retorno).
+tipo(pais, Retorno):- fake_pais(Retorno).
+tipo(provincia, Retorno):- fake_provincia(Retorno).
+tipo(nombre_color, Retorno):- fake_nombre_color(Retorno).
+tipo(nombre_empresa, Retorno):- fake_nombre_empresa(Retorno).
+tipo(moneda_sigla, Retorno):- fake_moneda(Retorno, _).
+tipo(moneda_nombre, Retorno):- fake_moneda(_ ,Retorno).
+tipo(fecha(Desde,Hasta), Retorno):-fake_fecha(Retorno, Desde, Hasta).
+tipo(dia_de_semana, Retorno):- fake_dia_de_semana(Retorno).
+tipo(autoincremento(Desde), Retorno, N):-Retorno is Desde+N. 
 
-armarRenglon([Tipo],[Elemento]):-tipo(Tipo,Elemento),!.
-armarRenglon([Tipo|Tipos], [Elemento|Resto]):-tipo(Tipo,Elemento), armarRenglon(Tipos,Resto).
-
+armarRenglon([Tipo],[Elemento], N):-tipo(Tipo,Elemento),!.
+armarRenglon([Tipo],[Elemento], N):-tipo(Tipo,Elemento,N),!.
+armarRenglon([Tipo|Tipos], [Elemento|Resto], N):-tipo(Tipo,Elemento,N), !, armarRenglon(Tipos,Resto, N).
+armarRenglon([Tipo|Tipos], [Elemento|Resto], N):-tipo(Tipo, Elemento), armarRenglon(Tipos,Resto, N).
 armarListaTipos([col(Nombre,Tipo)], [Tipo]):-!.
 armarListaTipos([col(Nombre,Tipo) | Cols], [Tipo|Tipos]):-armarListaTipos(Cols,Tipos).
